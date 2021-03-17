@@ -6,15 +6,19 @@
 # Los vectores son la estructura básica en R.
 # Un vector, siempre contiene elementos del mismo tipo
 
-var1 <- c (6, 20, 4)
+var1 <- c (6, 20, 4) 
+"mismo tipo de dato"
 
 var2 <- 2:6
 
 var.3 <- seq (2,3, by=.2)
+"se puede nombrar las variables con ."
 
 4var <- rep(1:2, times=3)
+"no se puede guardar variable con un numero al inicio"
 
 var4 <- rep(1:2, times=3)
+"rep es repeticion"
 
 v5 <- rep(seq(1,5),times=2)
 
@@ -26,7 +30,8 @@ typeof(v5)
 
 # ¿Qué pasa con los vectores a los que se les asigna distintos
 # tipos de elementos? Véamos un ejemplo:
-v6 <- c('a', 1, 'b')   
+v6 <- c('a', 1, 'b')
+"convierte el uno a string '1'"
 
 # v6 ¿es un vector?
 is.vector(v6) 
@@ -77,6 +82,7 @@ typeof(l)
 #Un objeto de una lista, puede ser otra lista
 
 l1 <- list(x=1:5, y=c('a', 'b'))
+"x -> 1, 2, 3, 4, 5 y --> a, b"
 
 # 2.1 Selección de objetos y elementos de una lista ----------------------------
 
@@ -161,25 +167,28 @@ ncol(titanic) # Número de columnas
 
 summary(titanic)  #Resumen de varaibles numéricas de las bases de datos
 
+View(summary(titanic))
+
 # Convertir las variables 
 
 titanic$Survived <- as.factor(titanic$Survived) #convertir una columna en factor
+"Los factores son una clase de vector que contiene los datos de una variable categórica."
 
 titanic$Sex <- as.factor(titanic$Sex)
 
 summary(titanic)
-
+"porque ahora son factores el summary se resume mas en estas features"
 
 # Crear una tabla cruzada 
 
 table(titanic$Survived, titanic$Sex)
-
 
 # 5 CICLOS FOR ===============================================================
 
 for (col in titanic){
   print(col)
 }
+"lo importante es abrir y cerrar llaves para el for loop"
 
 # 6 FUNCIONES  ===============================================================
 
@@ -187,13 +196,13 @@ cuadrado <- function(n){
   res <- n*n
   return(res)
 }
+"las funciones aparecen en el indice, el cual fue construido con los #"
 
 cuadrado(7)
 
 #7. INSTALAR Y CARGAR BIBLIOTECAS ============================================
 
 # (por ejemplo ggplot2)
-
 
 install.packages("ggplot2")   # Instalar
 
